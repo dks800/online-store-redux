@@ -37,7 +37,12 @@ export default function ProductDetails(props) {
         </button>
       </Link>
       {Object.keys(product).length === 0 ? (
-        <div>Loading Product details...</div>
+        <div className="ui segment loader_">
+          <div className="ui active inverted dimmer">
+            <div className="ui text loader">Loading...</div>
+          </div>
+          <p></p>
+        </div>
       ) : (
         <div className="ui placeholder segment">
           <div className="ui two column stackable center aligned grid">

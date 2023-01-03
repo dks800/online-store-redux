@@ -33,9 +33,9 @@ export default function ProductList() {
     <div className="ui grid container">
       <Product />
       <i
-        title="Scroll to Top hidden"
+        title="Scroll to Top"
         onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
-        className="scroll-top angle double up icon"
+        className="scroll-top hidden angle double up icon"
       ></i>
     </div>
   );
