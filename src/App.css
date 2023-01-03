@@ -1,38 +1,71 @@
 .App {
-  text-align: center;
+  margin-top: 50px;
+}
+.mt-20 {
+  margin-top: 10px !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ui.cards > .card > .image {
+  background-color: #fff;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+.ui.cards > .card > .image > img {
+  max-height: 200px;
+  object-fit: contain;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ui.cards > .card > .content > .header {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ui.cards > .card {
+  max-width: 95%;
+}
+
+.ui.cards > .card:hover > .image > img,
+.column.lp .image:hover {
+  transform: rotate(8deg);
+  scale: 1.2;
+  mix-blend-mode: multiply;
+}
+
+.column.lp .image {
+  transition: all 0.2s ease-in-out;
+}
+
+.ui.grid > .row > .column > img,
+.ui.grid > .row > img {
+  padding: 20px;
+  mix-blend-mode: multiply;
+  max-height: 400px;
+  max-width: 500px;
+  object-fit: contain;
+  margin: auto;
+}
+
+.column.rp {
+  padding: 0 50px !important;
+}
+
+.ui.placeholder .header:not(:first-child):before,
+.ui.placeholder .image:not(:first-child):before,
+.ui.placeholder .paragraph:not(:first-child):before {
+  height: 0;
+}
+
+.column.rp p {
+  text-align: justify;
+}
+
+.ui.grid.container.product-details {
+  justify-content: end;
+  flex-direction: column;
 }
