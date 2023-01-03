@@ -14,12 +14,29 @@ export default function ProductList() {
       });
     dispatch(setProducts(response.data));
   };
+  const displayScrollTopButton = () => {
+    if (window.pageYOffset > 300) {
+      document.querySelector(".scroll-top") &&
+        document.querySelector(".scroll-top").classList.remove("hidden");
+    } else {
+      document.querySelector(".scroll-top") &&
+        document.querySelector(".scroll-top").classList.add("hidden");
+    }
+  };
   useEffect(() => {
     fetchProducts();
+    document.addEventListener("scroll", () => {
+      displayScrollTopButton();
+    });
   });
   return (
     <div className="ui grid container">
       <Product />
+      <i
+        title="Scroll to Top hidden"
+        onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+        className="scroll-top angle double up icon"
+      ></i>
     </div>
   );
 }
